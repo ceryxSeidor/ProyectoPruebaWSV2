@@ -1,0 +1,20 @@
+<aem:WS6-Entrada xmlns:aem="http://valida.aem.gob.cl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="WS6-Entrada.xsd">
+	<aem:vehiculoType>
+		<tipo>Hola</tipo>
+		<aFabrica>Hola</aFabrica>
+		<marca>a</marca>
+		<modelo>a</modelo>
+		<numeroMotor>b</numeroMotor>
+		<numeroSerie>c</numeroSerie>
+		<color>d</color>
+		<tipoCombustible>e</tipoCombustible>
+		<pesoBruto>f</pesoBruto>
+		<chasis>g</chasis>
+		<vin>h</vin>
+	</aem:vehiculoType>
+</aem:WS6-Entrada>
+
+<aem:nroTramite>237189</aem:nroTramite>
+	<aem:idTramiteEE>237189</aem:idTramiteEE>
+	<aem:idNuevoEstado>237189</aem:idNuevoEstado>
+	<aem:resolucion>Hola Hola</aem:resolucion>

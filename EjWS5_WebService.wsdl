@@ -1,0 +1,40 @@
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://localhost/soap/EjWS5_Server" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://localhost/soap/EjWS5_Server">
+	<types>
+		<xsd:schema targetNamespace="http://localhost/soap/EjWS5_Server">
+			<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+			<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+		</xsd:schema>
+	</types>
+	<message name="funcionEjWS5Request">
+		<part name="nroTramiteASD" type="xsd:int"/>
+		<part name="idTramiteEE" type="xsd:int"/>
+		<part name="idNuevoEstado" type="xsd:int"/>
+	</message>
+	<message name="funcionEjWS5Response">
+		<part name="return" type="xsd:string"/>
+	</message>
+	<portType name="EjWS5_ServerPortType">
+		<operation name="funcionEjWS5">
+			<documentation>Descripcion Ejemplo Tres</documentation>
+			<input message="tns:funcionEjWS5Request"/>
+			<output message="tns:funcionEjWS5Response"/>
+		</operation>
+	</portType>
+	<binding name="EjWS5_ServerBinding" type="tns:EjWS5_ServerPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="funcionEjWS5">
+			<soap:operation soapAction="http://localhost/ProyectoPruebaWSV2/EjWS5_Server.php/funcionEjWS5" style="rpc"/>
+			<input>
+				<soap:body use="encoded" namespace="urn:EjWS5_Server" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body use="encoded" namespace="urn:EjWS5_Server" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="EjWS5_Server">
+		<port name="EjWS5_ServerPort" binding="tns:EjWS5_ServerBinding">
+			<soap:address location="http://localhost:8080/ProyectoPruebaWSV2/EjWS5_Server.php"/>
+		</port>
+	</service>
+</definitions>

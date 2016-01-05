@@ -1,0 +1,40 @@
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://localhost/soap/EjWS7_Server" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://localhost/soap/EjWS7_Server">
+	<types>
+		<xsd:schema targetNamespace="http://localhost/soap/EjWS7_Server">
+			<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+			<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+		</xsd:schema>
+	</types>
+	<message name="funcionEjWS7Request">
+		<part name="nroTramite" type="xsd:int"/>
+	</message>
+	<message name="funcionEjWS7Response">
+		<part name="vigenciaTramite" type="xsd:boolean"/>
+		<part name="cuponPago" type="xsd:string"/>
+		<part name="valorTramite" type="xsd:string"/>
+	</message>
+	<portType name="EjWS7_ServerPortType">
+		<operation name="funcionEjWS7">
+			<documentation>Descripcion Ejemplo Tres</documentation>
+			<input message="tns:funcionEjWS7Request"/>
+			<output message="tns:funcionEjWS7Response"/>
+		</operation>
+	</portType>
+	<binding name="EjWS7_ServerBinding" type="tns:EjWS7_ServerPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="funcionEjWS7">
+			<soap:operation soapAction="http://localhost/ProyectoPruebaWSV2/EjWS7_Server.php/funcionEjWS7" style="rpc"/>
+			<input>
+				<soap:body use="encoded" namespace="urn:EjWS7_Server" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body use="encoded" namespace="urn:EjWS7_Server" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="EjWS7_Server">
+		<port name="EjWS7_ServerPort" binding="tns:EjWS7_ServerBinding">
+			<soap:address location="http://localhost:8080/ProyectoPruebaWSV2/EjWS7_Server.php"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,63 @@
+<xsd:schema xmlns:aem="http://valida.aem.gob.cl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://valida.aem.gob.cl" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:documentation>
+			Nombre Esquema: ProyectoEE Tipo Esquema: Basal Descripcion: Este esquema define diversos campos ocupados por EE, IISA y ASD. Descripción Campos: - sexoValores: los valores son del tipo String. - estadoCivilValores: los valores son del tipo String. - regionValores: los valores son del tipo String. - comunasValores: los valores son del tipo String. - provinciasValores: los valores son del tipo String. - institucionesValores: los valores corresponden a los nombres de las instituciones *. Observaciones: * Los valores existentes en el elemento instituciones corresponden a valores inventados. Se espera el envío de una lista oficial.
+		</xsd:documentation>
+	</xsd:annotation>
+
+<!-- WS1-MINSAL: Rescatar tipos de instalación, fines y beneficios sociales -->
+	<xsd:complexType name="listaTiposInstalacion">
+		<xsd:sequence>
+			<xsd:element name="idTipoInstalacion">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="descripcionTipoInstalacion">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="listaFines">
+		<xsd:sequence>
+			<xsd:element name="idFines">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="descripcionFines">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="idTipoInstalacion">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="listaBeneficiosSociales">
+		<xsd:sequence>
+			<xsd:element name="idBeneficiosSociales">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="descripcionBeneficiosSociales">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="sexoValores">

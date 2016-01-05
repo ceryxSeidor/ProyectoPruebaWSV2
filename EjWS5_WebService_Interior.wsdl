@@ -1,0 +1,40 @@
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://localhost/soap/EjWS5_Server_Interior" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://localhost/soap/EjWS5_Server_Interior">
+	<types>
+		<xsd:schema targetNamespace="http://localhost/soap/EjWS5_Server_Interior">
+			<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+			<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+		</xsd:schema>
+	</types>
+	<message name="funcionEjWS5_InteriorRequest">
+		<part name="nroTramiteASD22" type="xsd:int"/>
+		<part name="idTramiteEE22" type="xsd:int"/>
+		<part name="idNuevoEstado22" type="xsd:int"/>
+	</message>
+	<message name="funcionEjWS5_InteriorResponse">
+		<part name="return" type="xsd:string"/>
+	</message>
+	<portType name="EjWS5_Server_InteriorPortType">
+		<operation name="funcionEjWS5_Interior">
+			<documentation>Descripcion Ejemplo Tres</documentation>
+			<input message="tns:funcionEjWS5_InteriorRequest"/>
+			<output message="tns:funcionEjWS5_InteriorResponse"/>
+		</operation>
+	</portType>
+	<binding name="EjWS5_Server_InteriorBinding" type="tns:EjWS5_Server_InteriorPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="funcionEjWS5_Interior">
+			<soap:operation soapAction="http://localhost/ProyectoPruebaWSV2/EjWS5_Server_Interior.php/funcionEjWS5_Interior" style="rpc"/>
+			<input>
+				<soap:body use="encoded" namespace="urn:EjWS5_Server_Interior" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body use="encoded" namespace="urn:EjWS5_Server_Interior" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="EjWS5_Server_Interior">
+		<port name="EjWS5_Server_InteriorPort" binding="tns:EjWS5_Server_InteriorBinding">
+			<soap:address location="http://localhost:8080/ProyectoPruebaWSV2/EjWS5_Server_Interior.php"/>
+		</port>
+	</service>
+</definitions>

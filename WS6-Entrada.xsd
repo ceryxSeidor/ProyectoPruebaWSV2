@@ -1,0 +1,18 @@
+<xsd:schema xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:aem="http://valida.aem.gob.cl" targetNamespace="http://valida.aem.gob.cl" elementFormDefault="qualified" version="1.0">
+	<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"/>
+	<xsd:element name="WS6-Entrada">
+		<xsd:annotation>
+			<xsd:documentation>
+				Nombre Esquema: entradaDT Tipo Esquema: Documental de Mensajería Descripción: - entrada para el servicios de la Dirección del Trabajo Descripcion elementos Campo => Tipo de dato Rut => runType, este tipo está definido en el esquema basal "run.xsd", mas información en sitio del Administrador de Esquemas y Metadatos.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="nroTramtie" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="idTramiteEE" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="idNuevoEstado" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="resolucion" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

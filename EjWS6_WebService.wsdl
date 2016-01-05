@@ -1,0 +1,41 @@
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://localhost/soap/EjWS6_Server" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://localhost/soap/EjWS6_Server">
+	<types>
+		<xsd:schema targetNamespace="http://localhost/soap/EjWS6_Server">
+			<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+			<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+		</xsd:schema>
+	</types>
+	<message name="funcionEjWS6Request">
+		<part name="nroTramiteASD" type="xsd:int"/>
+		<part name="idTramiteEE" type="xsd:int"/>
+		<part name="idNuevoEstado" type="xsd:int"/>
+		<part name="resolucionAdjunta" type="xsd:boolean"/>
+	</message>
+	<message name="funcionEjWS6Response">
+		<part name="return" type="xsd:boolean"/>
+	</message>
+	<portType name="EjWS6_ServerPortType">
+		<operation name="funcionEjWS6">
+			<documentation>Descripcion Ejemplo Tres</documentation>
+			<input message="tns:funcionEjWS6Request"/>
+			<output message="tns:funcionEjWS6Response"/>
+		</operation>
+	</portType>
+	<binding name="EjWS6_ServerBinding" type="tns:EjWS6_ServerPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="funcionEjWS6">
+			<soap:operation soapAction="http://localhost/ProyectoPruebaWSV2/EjWS6_Server.php/funcionEjWS6" style="rpc"/>
+			<input>
+				<soap:body use="encoded" namespace="urn:EjWS6_Server" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body use="encoded" namespace="urn:EjWS6_Server" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="EjWS6_Server">
+		<port name="EjWS6_ServerPort" binding="tns:EjWS6_ServerBinding">
+			<soap:address location="http://localhost:8080/ProyectoPruebaWSV2/EjWS6_Server.php"/>
+		</port>
+	</service>
+</definitions>
