@@ -3,7 +3,7 @@
 	<xsd:element name="WS6-Entrada">
 		<xsd:annotation>
 			<xsd:documentation>
-				Nombre Esquema WS6hola22adasasdhskj: entradaDT Tipo Esquema: Documental de Mensajería Descripción: - entrada para el servicios de la Dirección del Trabajo Descripcion elementos Campo => Tipo de dato Rut => runType, este tipo está definido en el esquema basal "run.xsd", mas información en sitio del Administrador de Esquemas y Metadatos.
+				Nombre Esquema WS6hola22adasasdhskjjajajajajajaja: entradaDT Tipo Esquema: Documental de Mensajería Descripción: - entrada para el servicios de la Dirección del Trabajo Descripcion elementos Campo => Tipo de dato Rut => runType, este tipo está definido en el esquema basal "run.xsd", mas información en sitio del Administrador de Esquemas y Metadatos.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
